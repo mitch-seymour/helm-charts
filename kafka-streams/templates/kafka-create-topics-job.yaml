@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kafka-create-topics
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - args:
+        - bash
+        - /scripts/create-topics.sh
+        image: {{ .Values.images.kafka }}
+        imagePullPolicy: ""
+        name: kafka-create-topics
+        resources: {}
+        volumeMounts:
+        - name: create-kafka-topics
+          mountPath: /scripts
+      hostname: kafka-create-topics
+      # mount the config map, which contains a bash script for creating the
+      # kafka topics needed by our application
+      volumes:
+      - name: create-kafka-topics
+        configMap:
+          name: create-kafka-topics
+status: {}

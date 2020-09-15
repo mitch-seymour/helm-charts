@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: broker
+  # The name below cannot be samed `kafka` since kubernetes will automatically
+  # create an environment variable in the format for <NAME>_PORT, which happens
+  # to correlate with a deprecated config called `KAFKA_PORT` that prevents
+  # Kafka from starting... it's wild. Therefore, we'll append the `-svc` suffix
+  # to circumvent this bizarre issue
+  name: broker
+spec:
+  ports:
+  - name: "29092"
+    port: 29092
+    targetPort: 29092
+  selector:
+    io.kompose.service: kafka
+status:
+  loadBalancer: {}

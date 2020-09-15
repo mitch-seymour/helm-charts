@@ -1,0 +1,11 @@
+images:
+  grafana: grafana/grafana:latest
+  kafka: confluentinc/cp-enterprise-kafka:5.5.0
+  prometheus: prom/prometheus:latest
+  zookeeper: confluentinc/cp-zookeeper:5.5.0
+
+topics:
+  - name: users
+    partitions: 4
+  - name: greetings
+    partitions: 4
