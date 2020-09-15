@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  kafka-streams-example:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: "2020-09-14T20:30:02.638655-04:00"
+    description: An example chart for Kafka Streams
+    digest: f1334e44bef4046273216edbb3156c3943647230051e0d80637f364e817ab7b9
+    home: https://kafka-streams-book.com
+    keywords:
+    - kafka
+    - kafka streams
+    maintainers:
+    - email: mitchseymour@gmail.com
+      name: Mitch Seymour
+      url: https://mitchseymour.com/
+    name: kafka-streams-example
+    sources:
+    - https://github.com/mitch-seymour/mastering-kafka-streams-and-ksqldb
+    urls:
+    - kafka-streams-example-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-09-14T20:30:02.638213-04:00"
